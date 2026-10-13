@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+*.log
 
 # debug
 npm-debug.log*
@@ -30,10 +31,17 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files: ignore all except the env.example template
-.env*
+# Secrets and local environment files
+.env
 .env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+
+# Keep the example file tracked
 !env.example
+!.env.example
 
 # vercel
 .vercel
@@ -41,3 +49,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Private planning files and local Claude settings
+private_docs/
+CLAUDE.local.md
+.claude/settings.local.json
